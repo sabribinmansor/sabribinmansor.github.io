@@ -113,9 +113,9 @@
 
             </div></div> <!-- end tab achievements -->
 
-            <div id="hobbies" class="tab-pane fade">
+            <div id="hobbies" class="tab-pane fade"><div id="div-hobbies">
                 
-            </div> <!-- end tab hobbies -->
+            </div></div> <!-- end tab hobbies -->
 
             <div id="philosopy" class="tab-pane fade"><div id="div-philosopy">
                 
@@ -141,6 +141,15 @@
 		        $('.scroller_anchor').css('height', '0px');
 		        $('.scroller').css({ 'background': base_color, 'position': 'relative' });
 		    }
+		});
+		
+	    	$(function(){
+	      		$("#div-software").load("tab_software.php"); 
+	      		$("#div-datascience").load("tab_datascience.php"); 
+	      		$("#div-tinkering").load("tab_tinkering.php"); 
+	      		$("#div-achievements").load("tab_achievements.php"); 
+	      		$("#div-hobbies").load("tab_hobbies.php"); 
+	      		$("#div-philosopy").load("tab_philosopy.php"); 
 		});
 	</script>
 
