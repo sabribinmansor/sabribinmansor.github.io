@@ -36,3 +36,6 @@
 .nav-tabs>li>a {
     border-radius: 0;
 }
+.tab-pane {
+    padding: 20px 30px;
+}
