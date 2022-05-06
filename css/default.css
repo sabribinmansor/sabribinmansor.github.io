@@ -33,3 +33,6 @@
     position: relative;
     display: table-cell;
 }
+.nav-tabs>li>a {
+    border-radius: 0;
+}
