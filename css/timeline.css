@@ -6,12 +6,12 @@
   display: flex;
   -webkit-flex-direction: column;
   flex-direction: column;
-  padding: 0 62px;
   margin: 0;
   list-style: none;
+  position: relative;
 }
 .timeline::before {
-  position: fixed;
+  position: absolute;
   top: 0;
   height: 100%;
   padding-right: 11px;
@@ -23,7 +23,7 @@
   display: flex;
   -webkit-align-items: stretch;
   align-items: stretch;
-  padding: 62px 0;
+  padding: 20px 0;
 }
 .timeline__step {
   padding-right: 62px;
@@ -56,17 +56,10 @@
 }
 .timeline__time {
   padding-right: 126px;
-  font-size: 26px;
-}
-.timeline__title {
-  padding-bottom: 26px;
-  font-size: 32px;
 }
 .timeline__points {
   padding: 0;
   list-style: none;
-  font-size: 24px;
-  color: #77777D;
 }
 .timeline__points > * {
   padding: 0 0 12px 0;
@@ -115,13 +108,4 @@
 }
 
 
-.card {
-  background-color: white;
-  max-width: 750px;
-  margin: 0 auto;
-  height: 100%;
-  -moz-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-  -webkit-box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2), 0 8px 10px 1px rgba(0, 0, 0, 0.14), 0 3px 14px 2px rgba(0, 0, 0, 0.12);
-  display: table;
-}
+
