@@ -8,6 +8,7 @@
 .body-container {
     max-width: 680px;
     margin: 0 auto;
+    min-width: 350px;
 }
 
 .scroller {
@@ -15,13 +16,20 @@
 }
 
 .scroller ul {
-  height: 42px;
-  padding: 0px;
-  margin: 0px;
-  overflow: hidden;
-  overflow-y: scroll;
+    padding: 0px;
+    margin: 0px;
+    overflow: scroll;
 }
 
 .scroller ul li {
-  list-style-type: none;
+    list-style-type: none;
+    white-space: nowrap;
+}
+.nav-tabs>li {
+    float: unset;
+    margin-bottom: 0;
+}
+.nav>li {
+    position: relative;
+    display: table-cell;
 }
