@@ -41,25 +41,25 @@
 	    <div class="scroller">
             <ul id="main-nav" class="nav nav-tabs">
                 <li class="nav-link active">
-                    <a data-toggle="tab" href="#home">Home</a>
+                    <a data-toggle="tab" class="filterbtn activetab-home" href="#home">Home</a>
                 </li>
                 <li class="nav-link">
-                    <a data-toggle="tab" href="#software">Software</a>
+                    <a data-toggle="tab" class="filterbtn activetab-software" href="#software">Software</a>
                 </li>
                 <li class="nav-link">
-                    <a data-toggle="tab" href="#datascience">Data Science</a>
+                    <a data-toggle="tab" class="filterbtn activetab-datascience" href="#datascience">Data Science</a>
                 </li>
                 <li class="nav-link">
-                    <a data-toggle="tab" href="#tinkering">Tinkering</a>
+                    <a data-toggle="tab" class="filterbtn activetab-tinkering" href="#tinkering">Tinkering</a>
                 </li>
                 <li class="nav-link">
-                    <a data-toggle="tab" href="#achievements">Achievements</a>
+                    <a data-toggle="tab" class="filterbtn activetab-achievements" href="#achievements">Achievements</a>
                 </li>
                 <li class="nav-link">
-                    <a data-toggle="tab" href="#hobbies">Hobbies</a>
+                    <a data-toggle="tab" class="filterbtn activetab-hobbies" href="#hobbies">Hobbies</a>
                 </li>
                 <li class="nav-link">
-                    <a data-toggle="tab" href="#philosophy">Philosophy</a>
+                    <a data-toggle="tab" class="filterbtn activetab-philosophy" href="#philosophy">Philosophy</a>
                 </li>
             </ul>
 	    </div>
@@ -152,9 +152,38 @@
 		});
 		
 		$(document).ready(function(){
-		    var selectedTab = $(document).getUrlParam('tab');
-		    $('#main-nav .nav-link *[data-toggle="'+selectedTab+'"]').trigger('click');
+
+		    $(".filterbtn").on("click", function(){
+		      var className = $(this).attr('class');
+		      var newval = className.split("activetab-")[1];
+		      var newval = newval.split(" ")[0];
+
+		      var url = new URL(window.location.href);
+		      var query_string = url.search;
+		      var search_params = new URLSearchParams(query_string); 
+
+		      search_params.delete('tab');
+		      search_params.append('tab', newval);
+
+		      // change the search property of the main url
+		      url.search = search_params.toString();
+
+		      // the new url string
+		      var new_url = url.toString();
+		      window.history.pushState({}, null, new_url);
+
+		    });
+
+		    url = new URL(window.location.href);
+		    if (url.searchParams.get('tab')) {
+			activetab = url.searchParams.get('tab');
+			document.getElementsByClassName("activetab-"+activetab)[0].click();
+		    }
+
+
 		});
+
+
 	</script>
 
 </body>
