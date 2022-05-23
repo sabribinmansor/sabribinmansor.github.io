@@ -150,6 +150,11 @@
 	      		$("#div-hobbies").load("tab_hobbies.html"); 
 	      		$("#div-philosophy").load("tab_philosophy.html"); 
 		});
+		
+		$(document).ready(function(){
+		    var selectedTab = $(document).getUrlParam('tab');
+		    $('#main-nav .nav-link *[data-toggle="'+selectedTab+'"]').trigger('click');
+		});
 	</script>
 
 </body>
