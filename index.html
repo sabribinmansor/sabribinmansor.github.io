@@ -457,7 +457,7 @@
     </style>
 </head>
 <body>
-    <div id="particle-container" style="height: 500px;">
+    <div id="particle-container" style="height: 450px;">
       <div class='particle'></div><div class='particle'></div><div class='particle'></div><div class='particle'></div><div class='particle'></div>
       <div class='particle'></div><div class='particle'></div><div class='particle'></div><div class='particle'></div><div class='particle'></div>
       <div class='particle'></div><div class='particle'></div><div class='particle'></div><div class='particle'></div><div class='particle'></div>
@@ -478,7 +478,7 @@
             <h1><span>W</span><span>E</span><span>L</span><span>C</span><span>O</span><span>M</span><span>E</span></h1>
 	    </div>
 	    <p class="subtitle" style="margin-bottom: 50px;">This is where i <u>try</u> to document my learning journey.</p>
-	    <div class="scroller_anchor"></div>
+	    <div id="scroller_anchor" class="scroller_anchor"></div>
 	    <div class="scroller">
             <ul id="main-nav" class="nav nav-tabs">
                 <li class="nav-link active">
@@ -612,7 +612,10 @@
 		      // the new url string
 		      var new_url = url.toString();
 		      window.history.pushState({}, null, new_url);
-
+		      
+		      document.getElementById("scroller_anchor").scrollIntoView(true);  
+			    
+		      return false;
 		    });
 
 		    url = new URL(window.location.href);
