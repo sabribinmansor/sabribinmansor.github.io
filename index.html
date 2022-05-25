@@ -595,6 +595,9 @@
 		$(document).ready(function(){
 
 		    $(".filterbtn").on("click", function(){
+
+		      document.getElementById("scroller_anchor").scrollIntoView({behavior: "smooth"});
+			    
 		      var className = $(this).attr('class');
 		      var newval = className.split("activetab-")[1];
 		      var newval = newval.split(" ")[0];
@@ -613,9 +616,6 @@
 		      var new_url = url.toString();
 		      window.history.pushState({}, null, new_url);
 		      
-		      document.getElementById("scroller_anchor").scrollIntoView({behavior: "smooth"});
-			    
-		      return false;
 		    });
 
 		    url = new URL(window.location.href);
