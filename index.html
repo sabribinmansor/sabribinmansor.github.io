@@ -613,7 +613,7 @@
 		      var new_url = url.toString();
 		      window.history.pushState({}, null, new_url);
 		      
-		      document.getElementById("scroller_anchor").scrollIntoView(true);  
+		      document.getElementById("scroller_anchor").scrollIntoView({behavior: "smooth"});
 			    
 		      return false;
 		    });
